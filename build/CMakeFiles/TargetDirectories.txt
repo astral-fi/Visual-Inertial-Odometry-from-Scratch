@@ -1,0 +1,3 @@
+/home/astral-fi/Visual-Inertial-Odometry-from-Scratch/build/CMakeFiles/vio_app.dir
+/home/astral-fi/Visual-Inertial-Odometry-from-Scratch/build/CMakeFiles/edit_cache.dir
+/home/astral-fi/Visual-Inertial-Odometry-from-Scratch/build/CMakeFiles/rebuild_cache.dir

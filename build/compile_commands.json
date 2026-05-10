@@ -1,0 +1,12 @@
+[
+{
+  "directory": "/home/astral-fi/Visual-Inertial-Odometry-from-Scratch/build",
+  "command": "/usr/bin/g++  -I/home/astral-fi/Visual-Inertial-Odometry-from-Scratch/include -isystem /usr/include/opencv4 -isystem /usr/include/eigen3  -Wall -Wextra -Wpedantic -Werror=return-type -g -std=c++17 -o CMakeFiles/vio_app.dir/src/main.cpp.o -c /home/astral-fi/Visual-Inertial-Odometry-from-Scratch/src/main.cpp",
+  "file": "/home/astral-fi/Visual-Inertial-Odometry-from-Scratch/src/main.cpp"
+},
+{
+  "directory": "/home/astral-fi/Visual-Inertial-Odometry-from-Scratch/build",
+  "command": "/usr/bin/g++  -I/home/astral-fi/Visual-Inertial-Odometry-from-Scratch/include -isystem /usr/include/opencv4 -isystem /usr/include/eigen3  -Wall -Wextra -Wpedantic -Werror=return-type -g -std=c++17 -o CMakeFiles/vio_app.dir/src/dataset_reader.cpp.o -c /home/astral-fi/Visual-Inertial-Odometry-from-Scratch/src/dataset_reader.cpp",
+  "file": "/home/astral-fi/Visual-Inertial-Odometry-from-Scratch/src/dataset_reader.cpp"
+}
+]
