@@ -2,10 +2,12 @@
 #include <opencv2/opencv.hpp>
 #include <Eigen/Dense>
 #include "vio/datareader.hpp"
+#include "vio/frontend.hpp"
 
 int main(){
     vio::DatasetReader reader("/home/astral-fi/vicon_room1/V1_01_easy/mav0");
 	int count = 0;
+	vio::Frontend frontend(true);
     while(auto measurement = reader.getNextMeasurement()){
         // Process the measurement
 		if(std::holds_alternative<vio::ImuMeasurement>(*measurement)){
@@ -18,8 +20,7 @@ int main(){
 			auto image_measurement = std::get<vio::ImageMeasurement>(*measurement);
 			// Process Image measurement
 			std::cout << "Image Measurement at timestamp: " << image_measurement.timestamp << std::endl;
-			cv::imshow("Image", image_measurement.image);
-			cv::waitKey(1); // Display the image for a short time
+			frontend.processImage(image_measurement);
 		}
     }
     return 0;

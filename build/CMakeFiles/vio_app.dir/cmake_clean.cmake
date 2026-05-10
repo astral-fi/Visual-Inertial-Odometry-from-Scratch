@@ -1,6 +1,8 @@
 file(REMOVE_RECURSE
   "CMakeFiles/vio_app.dir/src/dataset_reader.cpp.o"
   "CMakeFiles/vio_app.dir/src/dataset_reader.cpp.o.d"
+  "CMakeFiles/vio_app.dir/src/frotend.cpp.o"
+  "CMakeFiles/vio_app.dir/src/frotend.cpp.o.d"
   "CMakeFiles/vio_app.dir/src/main.cpp.o"
   "CMakeFiles/vio_app.dir/src/main.cpp.o.d"
   "vio_app"

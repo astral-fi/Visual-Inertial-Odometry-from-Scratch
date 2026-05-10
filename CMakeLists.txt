@@ -22,6 +22,7 @@ find_package(Eigen3 REQUIRED)
 add_executable(vio_app 
     src/main.cpp
     src/dataset_reader.cpp
+    src/frotend.cpp
 )
 
 # Tell the target where to look for our local header files

@@ -81,12 +81,12 @@ clean: CMakeFiles/vio_app.dir/clean
 CMakeFiles/vio_app.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/vio_app.dir/build.make CMakeFiles/vio_app.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/vio_app.dir/build.make CMakeFiles/vio_app.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/astral-fi/Visual-Inertial-Odometry-from-Scratch/build/CMakeFiles --progress-num=1,2,3 "Built target vio_app"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/astral-fi/Visual-Inertial-Odometry-from-Scratch/build/CMakeFiles --progress-num=1,2,3,4 "Built target vio_app"
 .PHONY : CMakeFiles/vio_app.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/vio_app.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/astral-fi/Visual-Inertial-Odometry-from-Scratch/build/CMakeFiles 3
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/astral-fi/Visual-Inertial-Odometry-from-Scratch/build/CMakeFiles 4
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/vio_app.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/astral-fi/Visual-Inertial-Odometry-from-Scratch/build/CMakeFiles 0
 .PHONY : CMakeFiles/vio_app.dir/rule

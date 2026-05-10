@@ -153,6 +153,30 @@ src/dataset_reader.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/vio_app.dir/build.make CMakeFiles/vio_app.dir/src/dataset_reader.cpp.s
 .PHONY : src/dataset_reader.cpp.s
 
+src/frotend.o: src/frotend.cpp.o
+.PHONY : src/frotend.o
+
+# target to build an object file
+src/frotend.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/vio_app.dir/build.make CMakeFiles/vio_app.dir/src/frotend.cpp.o
+.PHONY : src/frotend.cpp.o
+
+src/frotend.i: src/frotend.cpp.i
+.PHONY : src/frotend.i
+
+# target to preprocess a source file
+src/frotend.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/vio_app.dir/build.make CMakeFiles/vio_app.dir/src/frotend.cpp.i
+.PHONY : src/frotend.cpp.i
+
+src/frotend.s: src/frotend.cpp.s
+.PHONY : src/frotend.s
+
+# target to generate assembly for a file
+src/frotend.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/vio_app.dir/build.make CMakeFiles/vio_app.dir/src/frotend.cpp.s
+.PHONY : src/frotend.cpp.s
+
 src/main.o: src/main.cpp.o
 .PHONY : src/main.o
 
@@ -189,6 +213,9 @@ help:
 	@echo "... src/dataset_reader.o"
 	@echo "... src/dataset_reader.i"
 	@echo "... src/dataset_reader.s"
+	@echo "... src/frotend.o"
+	@echo "... src/frotend.i"
+	@echo "... src/frotend.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"

@@ -9,6 +9,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/astral-fi/Visual-Inertial-Odometry-from-Scratch/src/dataset_reader.cpp" "CMakeFiles/vio_app.dir/src/dataset_reader.cpp.o" "gcc" "CMakeFiles/vio_app.dir/src/dataset_reader.cpp.o.d"
+  "/home/astral-fi/Visual-Inertial-Odometry-from-Scratch/src/frotend.cpp" "CMakeFiles/vio_app.dir/src/frotend.cpp.o" "gcc" "CMakeFiles/vio_app.dir/src/frotend.cpp.o.d"
   "/home/astral-fi/Visual-Inertial-Odometry-from-Scratch/src/main.cpp" "CMakeFiles/vio_app.dir/src/main.cpp.o" "gcc" "CMakeFiles/vio_app.dir/src/main.cpp.o.d"
   )
 
