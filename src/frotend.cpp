@@ -3,10 +3,11 @@
 
 
 namespace vio{
-    Frontend::Frontend(bool show_gui){
+    Frontend::Frontend(const vio::Camera& camera, bool show_gui){
+        this->camera = camera;
         this->show_gui = show_gui;
     }
-    void Frontend::processImage(const ImageMeasurement& image_measurement){
+    vio::TrackedFrame Frontend::processImage(const ImageMeasurement& image_measurement){
         cv::Mat image = image_measurement.image;
         std::vector<cv::Point2f> corners;
         if(prev_image.empty()){
@@ -16,7 +17,19 @@ namespace vio{
             for(const auto& pt : corners){
                 keypoint_ids.push_back(next_keypoint_id++);
             }
-            return;
+            std::vector<cv::Point2f> normalized_keypoints = camera.undistortPoints(corners);
+            std::vector<vio::TrackedFeature> tracked_features;
+            for(int i = 0; i < normalized_keypoints.size(); ++i){
+                vio::TrackedFeature feature;
+                feature.id = keypoint_ids[i];
+                feature.position = corners[i];
+                feature.normalized_position = normalized_keypoints[i];
+                tracked_features.push_back(feature);
+            }
+            vio::TrackedFrame tracked_frame;
+            tracked_frame.timestamp = image_measurement.timestamp;
+            tracked_frame.features = tracked_features;
+            return tracked_frame;
         }
         else{
             std::vector<cv::Point2f> tracked_keypoints;
@@ -35,7 +48,7 @@ namespace vio{
             }   
             prev_image = image.clone();
             prev_keypoints = valid_tracked_keypoints;
-            keypoint_ids = valid_keypoint_ids; 
+            keypoint_ids = valid_keypoint_ids;
             if(show_gui){
                 cv::Mat display_image;
                 cv::cvtColor(image, display_image, cv::COLOR_GRAY2BGR);
@@ -54,10 +67,24 @@ namespace vio{
                 }
                 cv::goodFeaturesToTrack(image, corners, 300 - valid_tracked_keypoints.size(), 0.01, 30, mask);
                 prev_keypoints.insert(prev_keypoints.end(), corners.begin(), corners.end());
-                for(const auto& pt : corners){
+                for(size_t i = 0; i < corners.size(); ++i){
                     keypoint_ids.push_back(next_keypoint_id++);
                 }
             }
+            std::vector<cv::Point2f> normalized_keypoints = camera.undistortPoints(valid_tracked_keypoints);
+            std::vector<vio::TrackedFeature> tracked_features;
+            for(int i = 0; i < normalized_keypoints.size(); ++i){
+                vio::TrackedFeature feature;
+                feature.id = valid_keypoint_ids[i];
+                feature.position = valid_tracked_keypoints[i];
+                feature.normalized_position = normalized_keypoints[i];
+                tracked_features.push_back(feature);
+            }
+            vio::TrackedFrame tracked_frame;
+            tracked_frame.timestamp = image_measurement.timestamp;
+            tracked_frame.features = tracked_features;
+            return tracked_frame;
+
         }
     }
 

@@ -17,12 +17,14 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -Wextra -Wpedantic -Werror=return-
 # ---------------------------------------------------------
 find_package(OpenCV REQUIRED)
 find_package(Eigen3 REQUIRED)
+find_package(yaml-cpp REQUIRED)
 
 # Define our main executable target
 add_executable(vio_app 
     src/main.cpp
     src/dataset_reader.cpp
     src/frotend.cpp
+    src/backend.cpp
 )
 
 # Tell the target where to look for our local header files
@@ -37,4 +39,5 @@ target_include_directories(vio_app PUBLIC
 # ---------------------------------------------------------
 target_include_directories(vio_app PRIVATE ${OpenCV_INCLUDE_DIRS})
 target_include_directories(vio_app PRIVATE ${EIGEN3_INCLUDE_DIR})
-target_link_libraries(vio_app PRIVATE ${OpenCV_LIBS} Eigen3::Eigen)
+target_include_directories(vio_app PRIVATE ${YAML_CPP_INCLUDE_DIRS})
+target_link_libraries(vio_app PRIVATE ${OpenCV_LIBS} Eigen3::Eigen ${YAML_CPP_LIBRARIES})
